@@ -29,5 +29,7 @@ class ProfessionSeeder extends Seeder
         Profession::create([
             'title' => 'Front-end developer',
         ]);
+
+        factory(Profession::class)->times(17)->create();
     }
 }
