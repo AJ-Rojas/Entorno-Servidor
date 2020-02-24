@@ -27,9 +27,18 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    protected $casts = [
+        'is_admin' => 'boolean'
+    ];
+
     public static function findByEmail($email)
     {
         return static::where(compact('email'))->first();
+    }
+
+    public function profession()
+    {
+        return $this->belongsTo(Profession::class);
     }
 
     public function isAdmin()
