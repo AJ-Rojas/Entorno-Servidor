@@ -18,12 +18,16 @@ Route::get('/', function () {
 Route::get('/usuarios', 'UserControler@index')
     ->name('users');
 
-Route::get('/usuarios/detalles/{user}', 'UserControler@show')
+Route::get('/usuarios/{user}', 'UserControler@show')
     ->where('user', '[0-9]+')
     ->name('users.show');
 
 Route::get('/usuarios/nuevo', 'UserControler@create')->name('user.create');
 
-Route::post('usuarios/crear', 'UserControler@store');
+Route::post('usuarios', 'UserControler@store');
+
+Route::get('/usuarios/{user}/editar', 'UserControler@edit')->name('users.edit');
+
+Route::put('/usuarios/{user}', 'UserControler@update');
 
 Route::get('/saludo/{name}/{nickname?}', 'WelcomeUserController');
