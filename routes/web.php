@@ -15,10 +15,12 @@ Route::get('/', function () {
     return 'Home';
 });
 
-Route::get('/usuarios', 'UserControler@index');
+Route::get('/usuarios', 'UserControler@index')
+    ->name('users');
 
-Route::get('/usuarios/{id}', 'UserControler@show')
-    ->where('id', '[0-9]+');
+Route::get('/usuarios/detalles/{user}', 'UserControler@show')
+    ->where('user', '[0-9]+')
+    ->name('users.show');
 
 Route::get('/usuarios/nuevo', 'UserControler@create');
 

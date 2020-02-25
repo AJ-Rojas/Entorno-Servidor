@@ -38,15 +38,28 @@ class UsersModuleTest extends TestCase
 
         $this->get('/usuarios')
             ->assertStatus(200)
-            ->assertSee('No hay usuarios registrados');
+            ->assertSee('No hay usuarios registrados.');
     }
 
     /** @test */
-    function it_loads_the_users_details_page()
+    function it_displays_the_users_details()
     {
-        $this->get('/usuarios/5')
+
+        $user = factory(User::class)->create([
+            'name' => 'Antonio Jesus'
+        ]);
+
+        $this->get('/usuarios/'.$user->id)
             ->assertStatus(200)
-            ->assertSee('Mostrando detalle del usuario: 5');
+            ->assertSee('Antonio Jesus');
+    }
+
+    /** @test */
+    function it_displays_a_404_if_the_user_is_not_found()
+    {
+        $this->get('/usuarios/999')
+            ->assertStatus(404)
+            ->assertSee('Página no encontrada');
     }
 
     /** @test */
