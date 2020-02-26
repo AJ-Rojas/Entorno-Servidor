@@ -35,7 +35,7 @@
                     <input type="password" class="form-control" name="password" id="password">
                 </div>
 
-                <button type="submit" class="btn btn-primary">Crear usuario</button>
+                <button type="submit" class="btn btn-primary">Editar usuario</button>
                 <a href="{{ route('users') }}" class="btn btn-link">Volver</a>
     </form>
 @endsection
