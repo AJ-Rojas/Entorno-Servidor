@@ -2,10 +2,13 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Products extends Model
+class Products extends Authenticatable
 {
+    use Notifiable;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -14,4 +17,5 @@ class Products extends Model
     protected $fillable = [
         'brand', 'type', 'quantity', 'price',
     ];
+
 }

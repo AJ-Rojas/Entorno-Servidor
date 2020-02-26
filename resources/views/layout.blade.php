@@ -22,7 +22,7 @@
 <header>
     <!-- Fixed navbar -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="#">Proyecto de Laravel</a>
+        <a class="navbar-brand" href="{{ url('/') }}">Proyecto de Laravel</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -30,6 +30,9 @@
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
                     <a class="nav-link" href="{{ url('/usuarios') }}">Usuarios</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ url('/productos') }}">Productos</a>
                 </li>
             </ul>
         </div>

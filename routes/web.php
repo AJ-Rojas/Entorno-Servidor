@@ -31,6 +31,24 @@ Route::put('/usuarios/{user}', 'UserControler@update');
 Route::get('/saludo/{name}/{nickname?}', 'WelcomeUserController');
 
 Route::delete('/usuarios/{user}', 'UserControler@destroy')->name('users.destroy');
+
+Route::get('/productos', 'ProductController@index')
+    ->name('products.index');
+
+Route::get('/productos/{product}', 'ProductController@show')
+    ->where('product', '[0-9]+')
+    ->name('products.show');
+
+Route::get('/productos/nuevo', 'ProductController@create')->name('products.create');
+
+Route::post('/productos', 'ProductController@store');
+
+Route::get('/productos/{product}/editar', 'ProductController@edit')->name('products.edit');
+
+Route::put('/productos/{product}', 'ProductController@update');
+
+Route::delete('/productos/{product}', 'ProductController@destroy')->name('products.destroy');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
