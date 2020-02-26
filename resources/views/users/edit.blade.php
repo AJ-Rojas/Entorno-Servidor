@@ -20,19 +20,22 @@
         {{ method_field('PUT') }}
         {{ csrf_field() }}
 
-        <label for="name">Nombre:</label>
-        <input type="text" name="name" id="name" value="{{ old('name', $user->name) }}">
-        <br>
-        <label for="email">Correo electrónico: </label>
-        <input type="email" name="email" id="email" value="{{ old('email', $user->email) }}">
-        <br>
-        <label for="password">Contraseña:</label>
-        <input type="password" name="password" id="password">
-        <br>
-        <button type="submit">Editar usuario</button>
-    </form>
+        <div class="form-group">
+                    <label for="name">Nombre:</label>
+                    <input type="text" class="form-control" name="name" id="name" value="{{ old('name', $user->name) }}">
+                </div>
 
-    <p>
-        <a href="{{ route('users') }}">Volver</a>
-    </p>
+                <div class="form-group">
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" class="form-control" name="email" id="email" value="{{ old('name', $user->email) }}">
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Contraseña:</label>
+                    <input type="password" class="form-control" name="password" id="password">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Crear usuario</button>
+                <a href="{{ route('users') }}" class="btn btn-link">Volver</a>
+    </form>
 @endsection

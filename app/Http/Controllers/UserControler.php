@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\User;
+use Illuminate\Validation\Rule;
 
 class UserControler extends Controller
 {
@@ -36,6 +37,8 @@ class UserControler extends Controller
             'password' => 'required',
         ], [
             'name.required' => 'El campo nombre es obligatorio',
+            'email.required' => 'El campo correo electrónico es obligatorio',
+            'password.required' => 'El campo contraseña es obligatorio'
         ]);
 
         User::create([
@@ -56,14 +59,27 @@ class UserControler extends Controller
     {
         $data = request()->validate([
             'name' => 'required',
-            'email' => 'required|email|unique:users,email',
-            'password' => 'required',
+            'email' => ['required', 'email', Rule::unique('users')->ignore($user->id)],
+            'password' => '',
+        ], [
+            'email.unique' => 'El correo electrónico ya existe',
         ]);
 
-        $data['password'] = bcrypt($data['password']);
+        if ($data['password'] != null) {
+            $data['password'] = bcrypt($data['password']);
+        } else {
+            unset($data['password']);
+        }
 
         $user->update($data);
 
         return redirect()->route('users.show', ['user' => $user]);
+    }
+
+    function destroy(User $user)
+    {
+        $user->delete();
+
+        return redirect()->route('users');
     }
 }
