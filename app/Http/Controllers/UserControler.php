@@ -30,7 +30,6 @@ class UserControler extends Controller
 
     public function store()
     {
-        // validar demas campos
         $data = request()->validate([
             'name' => 'required',
             'email' => ['required', 'email', 'unique:users,email'],

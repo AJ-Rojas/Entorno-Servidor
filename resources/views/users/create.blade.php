@@ -3,9 +3,7 @@
 @section('title', "Crear usuario")
 
 @section('content')
-    <div class="card">
-        <h4 class="card-header">Crear usuario</h4>
-        <div class="card-body">
+        <h1>Crear usuario</h1>
 
             @if ($errors->any())
                 <div class="alert alert-danger">
@@ -23,12 +21,12 @@
 
                 <div class="form-group">
                     <label for="name">Nombre:</label>
-                    <input type="text" class="form-control" name="name" id="name" placeholder="Pedro Perez" value="{{ old('name') }}">
+                    <input type="text" class="form-control" name="name" id="name" placeholder="Ej: Pedro Perez" value="{{ old('name') }}">
                 </div>
 
                 <div class="form-group">
                     <label for="email">Correo electrónico:</label>
-                    <input type="email" class="form-control" name="email" id="email" placeholder="pedro@example.com" value="{{ old('email') }}">
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Ej: pedro@example.com" value="{{ old('email') }}">
                 </div>
 
                 <div class="form-group">
@@ -39,6 +37,4 @@
                 <button type="submit" class="btn btn-primary">Crear usuario</button>
                 <a href="{{ route('users') }}" class="btn btn-link">Volver</a>
             </form>
-        </div>
-    </div>
 @endsection
