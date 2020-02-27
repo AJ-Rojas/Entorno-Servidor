@@ -33,13 +33,15 @@ class ProductController extends Controller
         $data = request()->validate([
             'brand' => 'required',
             'type' => 'required',
-            'quantity' => 'required',
-            'price' => 'required',
+            'quantity' => ['required', 'numeric'],
+            'price' => ['required', 'numeric'],
         ], [
             'brand.required' => 'El campo marca es obligatorio',
             'type.required' => 'El campo tipo es obligatorio',
             'quantity.required' => 'El campo cantidad es obligatorio',
+            'quantity.numeric' => 'El campo cantidad solo acepta números',
             'price.required' => 'El campo precio es obligatorio',
+            'price.numeric' => 'El campo precio solo acepta números',
         ]);
 
         Products::create([
@@ -62,13 +64,15 @@ class ProductController extends Controller
         $data = request()->validate([
             'brand' => 'required',
             'type' => 'required',
-            'quantity' => 'required',
-            'price' => 'required'
+            'quantity' => ['required', 'numeric'],
+            'price' => ['required', 'numeric'], 
         ], [
             'brand.required' => 'El campo marca es obligatorio',
             'type.required' => 'El campo tipo es obligatorio',
             'quantity.required' => 'El campo cantidad es obligatorio',
+            'quantity.numeric' => 'El campo cantidad solo acepta números',
             'price.required' => 'El campo precio es obligatorio',
+            'price.numeric' => 'El campo precio solo acepta números',
 
         ]);
 

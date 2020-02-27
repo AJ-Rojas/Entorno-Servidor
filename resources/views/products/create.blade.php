@@ -3,7 +3,7 @@
 @section('title', "Crear producto")
 
 @section('content')
-        <h1>Crear Producto</h1>
+        <h1 class="mt-5">Crear Producto</h1>
             @if ($errors->any())
                 <div class="alert alert-danger">
                     <h6>Por favor corrige los errores debajo:</h6>
@@ -30,7 +30,7 @@
 
                 <div class="form-group">
                     <label for="quantity">Cantidad:</label>
-                    <input type="number" class="form-control" name="quantity" id="quantity" value="{{ old('quantity') }}">
+                    <input type="text" class="form-control" name="quantity" id="quantity" value="{{ old('quantity') }}">
                 </div>
 
                 <div class="form-group">
