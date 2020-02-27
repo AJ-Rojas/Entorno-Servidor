@@ -63,5 +63,5 @@ Una vez realizados estos pasos aya tendremos la aplicación lista para usar, y p
 
 ## Autor ✒️
 
-* **Antonio Jesús Rojas Román** - *Trabajo Inicial* [AJ-Rojas](https://github.com/AJ-Rojas)
-* **Antonio Jesús Rojas Román** - *Documentación*
+* **Antonio Jesús Rojas Román** - *Trabajo Inicial* - [AJ-Rojas](https://github.com/AJ-Rojas)
+* **Antonio Jesús Rojas Román** - *Documentación* - [AJ-Rojas](https://github.com/AJ-Rojas)
