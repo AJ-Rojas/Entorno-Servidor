@@ -1,8 +1,6 @@
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
-<style></style>
-
-## Proyecto Laravel
+## Proyecto Laravel 🚀
 
 Proyecto en el cual se ha desarrollado una aplicación web en PHP que se ejecuta contra una base de datos en MySql. Dicha aplicación gestiona un CRUD basado en REST en el cual lo gestionaremos mediante:
 
@@ -20,7 +18,7 @@ Proyecto en el cual se ha desarrollado una aplicación web en PHP que se ejecuta
 
 Dicho desarrollo se ha realizado basandose en la infraestructura de laravel. Para la utilización de código de terceros he usado el gestor de dependencias Composer.
 
-## Pasos para la instalación
+## Pasos para la instalación 🔧
 
 Para poder instalar este proyecto clonaremos este repositorio, el cual contiene la gestión del CRUD. Una vez lo tengamos clonado en nuestro entorno de desarrollo seguiremos los siguientes pasos:
 
@@ -55,3 +53,15 @@ Para poder instalar este proyecto clonaremos este repositorio, el cual contiene 
         **php artisan serve**
 
 Una vez realizados estos pasos aya tendremos la aplicación lista para usar, y para acceder a ella iniciamos Apache y MySql para poder tener acceso a nuestra base de datos y podamos ejecutarlo en un entorno sin necesidad de salir a internet. Cuando tengamos iniciados nuestros servicios abriremos nuestro navegador y en la barra de búsquedas tecleamos la dirección que nos ha dado el comando **php artisan serve**. Por defecto genera **http://127.0.0.1:8000** pero también podemos acceder desde **http://localhost:8000**.
+
+## Construido con :hammer:
+
+* [VSCode](https://code.visualstudio.com/docs) - IDE desarrollo
+* [Composer](https://getcomposer.org/doc/) - Gestor de dependencias
+* [Laravel](https://laravel.com/docs/6.x) - FrameWork
+* [MySql](https://dev.mysql.com/doc/) - BBDD
+
+## Autor ✒️
+
+* **Antonio Jesús Rojas Román** - *Trabajo Inicial* [AJ-Rojas](https://github.com/AJ-Rojas)
+* **Antonio Jesús Rojas Román** - *Documentación*
