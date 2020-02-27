@@ -11,8 +11,8 @@
     </div>
 
     @if ($users->isNotEmpty())
-    <table class="table">
-        <thead class="thead-dark">
+    <table class="table text-center">
+        <thead class="thead bg-warning">
         <tr>
             <th scope="col">#</th>
             <th scope="col">Nombre</th>
@@ -30,9 +30,9 @@
                 <form action="{{ route('users.destroy', $user) }}" method="POST">
                     {{ csrf_field() }}
                     {{ method_field('DELETE') }}
-                    <a href="{{ route('users.show', $user) }}" class="btn btn-link"><span class="oi oi-eye"></span></a>
-                    <a href="{{ route('users.edit', $user) }}" class="btn btn-link"><span class="oi oi-pencil"></span></a>
-                    <button type="submit" class="btn btn-link"><span class="oi oi-trash"></span></button>
+                    <a href="{{ route('users.show', $user) }}" class="btn btn-link"><span class="oi oi-eye text-info"></span></a>
+                    <a href="{{ route('users.edit', $user) }}" class="btn btn-link"><span class="oi oi-pencil text-success"></span></a>
+                    <button type="submit" class="btn btn-link"><span class="oi oi-trash text-danger"></span></button>
                 </form>
             </td>
         </tr>

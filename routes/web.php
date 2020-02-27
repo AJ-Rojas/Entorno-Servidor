@@ -32,6 +32,9 @@ Route::get('/saludo/{name}/{nickname?}', 'WelcomeUserController');
 
 Route::delete('/usuarios/{user}', 'UserControler@destroy')->name('users.destroy');
 
+
+
+
 Route::get('/productos', 'ProductController@index')
     ->name('products.index');
 
@@ -48,6 +51,28 @@ Route::get('/productos/{product}/editar', 'ProductController@edit')->name('produ
 Route::put('/productos/{product}', 'ProductController@update');
 
 Route::delete('/productos/{product}', 'ProductController@destroy')->name('products.destroy');
+
+
+
+Route::get('/proveedores', 'SuppliersController@index')
+    ->name('suppliers.index');
+
+Route::get('/proveedores/{provider}', 'SuppliersController@show')
+    ->where('provider', '[0-9]+')
+    ->name('suppliers.show');
+
+Route::get('/proveedores/nuevo', 'SuppliersController@create')->name('suppliers.create');
+
+Route::post('/proveedores', 'SuppliersController@store');
+
+Route::get('/proveedores/{provider}/editar', 'SuppliersController@edit')->name('suppliers.edit');
+
+Route::put('/proveedores/{provider}', 'SuppliersController@update');
+
+Route::delete('/proveedores/{provider}', 'SuppliersController@destroy')->name('suppliers.destroy');
+
+
+
 
 Auth::routes();
 

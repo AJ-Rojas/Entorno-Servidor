@@ -39,6 +39,6 @@
                 </div>
 
                 <button type="submit" class="btn btn-primary">Crear producto</button>
-                <a href="{{ route('products.index') }}" class="btn btn-link">Regresar al listado de productos</a>
+                <a href="{{ route('products.index') }}" class="btn btn-danger">Volver</a>
             </form>
 @endsection

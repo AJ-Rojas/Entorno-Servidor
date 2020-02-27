@@ -38,6 +38,6 @@
         </div>
 
         <button type="submit" class="btn btn-primary">Editar producto</button>
-        <a href="{{ route('products.index') }}">Volver</a>
+        <a href="{{ route('products.index') }}" class="btn btn-danger">Volver</a>
     </form>
 @endsection

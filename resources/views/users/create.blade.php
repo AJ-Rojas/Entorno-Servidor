@@ -35,6 +35,6 @@
                 </div>
 
                 <button type="submit" class="btn btn-primary">Crear usuario</button>
-                <a href="{{ route('users') }}" class="btn btn-link">Volver</a>
+                <a href="{{ route('users') }}" class="btn btn-danger">Volver</a>
             </form>
 @endsection

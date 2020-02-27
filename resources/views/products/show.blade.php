@@ -11,6 +11,6 @@
     <p>Precio: {{ $product->price }}</p>
 
     <p>
-        <a href="{{ route('products.index') }}">Volver</a>
+        <a href="{{ route('products.index') }}" class="btn btn-danger">Volver</a>
     </p>
 @endsection

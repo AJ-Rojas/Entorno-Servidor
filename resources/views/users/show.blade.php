@@ -7,8 +7,9 @@
 
     <p>Nombre del usuario: {{ $user->name }}</p>
     <p>Correo electrónico: {{ $user->email }}</p>
+    <p>Profesión: {{ $user->profession_id }}</p>
 
     <p>
-        <a href="{{ route('users') }}">Volver</a>
+        <a href="{{ route('users') }}" class="btn btn-danger">Volver</a>
     </p>
 @endsection
