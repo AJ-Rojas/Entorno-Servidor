@@ -1,58 +1,57 @@
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+<style></style>
 
-## About Laravel
+## Proyecto Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
+Proyecto en el cual se ha desarrollado una aplicación web en PHP que se ejecuta contra una base de datos en MySql. Dicha aplicación gestiona un CRUD basado en REST en el cual lo gestionaremos mediante:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+    CRUD de entidades
+    Front Controller
+    Rutas
+    REST
+    Controladores
+    Modelo
+    Vistas
+    Usuarios
+    Validador
+    Sesiones
+    Variables de entorno
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications.
+Dicho desarrollo se ha realizado basandose en la infraestructura de laravel. Para la utilización de código de terceros he usado el gestor de dependencias Composer.
 
-## Learning Laravel
+## Pasos para la instalación
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of any modern web application framework, making it a breeze to get started learning the framework.
+Para poder instalar este proyecto clonaremos este repositorio, el cual contiene la gestión del CRUD. Una vez lo tengamos clonado en nuestro entorno de desarrollo seguiremos los siguientes pasos:
 
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 1100 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
+   - 1.- Desde la consola nos moveremos al directorio raiz del proyecto que en este caso es ProyectoLaravel.
 
-## Laravel Sponsors
+   - 2.- Una vez estemos en el directorio raiz instalaremos el gestor de dependencias Composer, y para ello ejecutamos el siguiente comando:
 
-We would like to extend our thanks to the following sponsors for helping fund on-going Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell):
+        **composer install**
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Pulse Storm](http://www.pulsestorm.net/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
+   - 3.- Cuando haya terminado la instalación de Composer lo siguiente que haremos es copiar el contenido de .env.example, y para ello ejecutamos el siguiente      comando:
 
-## Contributing
+        **cp .env.example .env**
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+    Con este comando lo que estamos haciendo es renombrar el archivo .env.example
 
-## Security Vulnerabilities
+   - 4.- Abrimos el archivo que hemos modificado y lo que tenemos que cambiar es DB_DATABASE en la cual le indicaremos el nombre de la base de datos que hayamos creado previamente. También modificaremos las siguientes líneas DB_USERNAME y DB_PASSWORD que son las que contienen nuestro usuario y contraseña de la base de datos.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+   - 5.- Una vez hecho los cambios lo siguiente que haremos es generar una KEY y para ello ejecutamos el siguiente comando:
 
-## License
+        **php artisan key:generate**
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+   - 6.- Una vez creada la KEY lo siguiente en generar es un JWT y para ello ejecutamos el siguiente comando:
+
+        **php artisan jwt:generate**
+    
+   - 7.- Los siguiente que haremos es usar las migraciones y los seeders y para ello ejecutamos el siguiente comando:
+
+        **php artisan migrate --seed**
+    
+   - 8.- Una vez ejecutadas las migraciones y los seeders, para finalizar iniciamos el servidor y para ello ejecutamos el siguiente comando:
+
+        **php artisan serve**
+
+Una vez realizados estos pasos aya tendremos la aplicación lista para usar, y para acceder a ella iniciamos Apache y MySql para poder tener acceso a nuestra base de datos y podamos ejecutarlo en un entorno sin necesidad de salir a internet. Cuando tengamos iniciados nuestros servicios abriremos nuestro navegador y en la barra de búsquedas tecleamos la dirección que nos ha dado el comando **php artisan serve**. Por defecto genera **http://127.0.0.1:8000** pero también podemos acceder desde **http://localhost:8000**.
